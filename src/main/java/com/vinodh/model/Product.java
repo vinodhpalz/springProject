@@ -3,9 +3,12 @@ package com.vinodh.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.validation.constraints.Size;
+
 public class Product {
 	private String pName;
 	private Long pCost;
+	@Size(min=3, max=10)
 	private String pDesc;
 	private Date pDOM;
 	private ArrayList<String> pList;

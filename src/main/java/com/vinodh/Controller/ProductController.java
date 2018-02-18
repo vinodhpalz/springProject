@@ -1,9 +1,17 @@
 package com.vinodh.Controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
+import javax.validation.Valid;
+
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +23,13 @@ import com.vinodh.model.Product;
 @Controller
 public class ProductController {
 	
+/*	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		binder.setDisallowedFields(new String[] {"pDesc"});
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy**MM**DD");
+		binder.registerCustomEditor(Date.class, "pDOM", new CustomDateEditor(dateFormat,false));
+	}
+	*/
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
 		return "product";
@@ -36,7 +51,12 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "/productSuccess", method=RequestMethod.POST)
-	public String productSuccess(@ModelAttribute("product1")Product product1) {
+	public String productSuccess(@Valid @ModelAttribute("product1")Product product1, BindingResult result) {
+		
+		if(result.hasErrors())
+		{
+			return "product";
+		}
 		
 		return "productSuccess";
 		
