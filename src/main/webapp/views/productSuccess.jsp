@@ -8,8 +8,20 @@
 </head>
 <body>
 <h1>${HeaderName}</h1>
-<h3>${product1.pName}</h3>
-<h3>${product1.pCost}</h3>
+<table>
+<tr><td><h3>${product1.pName}</h3></td></tr>
+<tr><td><h3>${product1.pCost}</h3></td></tr>
+<tr><td><h3>${product1.pDesc}</h3></td></tr>
+<tr><td><h3>${product1.pDOM}</h3></td></tr>
+<tr><td><h3>${product1.pList}</h3></td></tr>
+</table>
+<tr><td><h4>${product1.supplier.sId}</h4></td></tr>
+<tr><td><h4>${product1.supplier.sName}</h4></td></tr>
+<tr><td><h4>${product1.supplier.sCountry}</h4></td></tr>
 
+<table>
+
+
+</table>
 </body>
 </html>

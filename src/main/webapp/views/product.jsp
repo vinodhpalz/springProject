@@ -18,9 +18,34 @@
 <tr><td>Product Cost:</td></tr>
 <tr><td><input type="text" name="pCost"/></td></tr>
 
-<tr><td><input type="submit" Value="Submit Data"/></td></tr>
+<tr><td>Product Description:</td></tr>
+<tr><td><input type="text" name="pDesc"/></td></tr>
 
+<tr><td>Product DateOfMan:</td></tr>
+<tr><td><input type="text" name="pDOM"/></td></tr>
+
+<tr><td>Product List:</td></tr>
+<tr><td><select name="pList" multiple>
+<option value="Apple">Apple</option>
+<option value="Orange">Orange</option>
+<option value="Mango">Mango</option>
+</select></td></tr>
 </table>
+
+<table>
+
+<tr><td>Supplier Id:</td>
+<td><input type="text" name="supplier.sId"/></td></tr>
+
+<tr><td>Supplier Name:</td>
+<td><input type="text" name="supplier.sName"/></td></tr>
+
+<tr><td>Supplier Country:</td>
+<td><input type="text" name="supplier.sCountry"/></td></tr>
+
+<tr><td><input type="submit" Value="Submit Data"/></td></tr>
+</table>
+
 </form>
 </body>
 </html>

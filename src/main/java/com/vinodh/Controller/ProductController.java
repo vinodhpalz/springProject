@@ -36,7 +36,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "/productSuccess", method=RequestMethod.POST)
-	public String productSuccess(Model m, @ModelAttribute("product1")Product product1) {
+	public String productSuccess(@ModelAttribute("product1")Product product1) {
 		
 		return "productSuccess";
 		
