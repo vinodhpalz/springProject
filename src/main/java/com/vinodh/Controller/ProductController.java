@@ -1,6 +1,7 @@
 package com.vinodh.Controller;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.vinodh.model.Product;
 
@@ -59,6 +61,31 @@ public class ProductController {
 		}
 		
 		return "productSuccess";
+		
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/products", method=RequestMethod.GET)
+	public ArrayList<Product> getProducts(){
+		
+		Product p1 = new Product();
+		p1.setpName("Samsung Mobile");
+		p1.setpCost(5000L);
+		
+		Product p2 = new Product();
+		p2.setpName("Apple Mobile");
+		p2.setpCost(8000L);
+		
+		Product p3 = new Product();
+		p3.setpName("Sony Mobile");
+		p3.setpCost(4000L);
+		
+		ArrayList<Product> al = new ArrayList<Product>();
+		al.add(p1);
+		al.add(p2);
+		al.add(p3);
+		
+		return al;
 		
 	}
 	
